@@ -25,7 +25,7 @@ class ColorSelectionViewController: UIViewController {
     let table = UITableView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Selector"
+        title = "Select:"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
         view.addSubview(table)

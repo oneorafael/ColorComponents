@@ -12,8 +12,6 @@ protocol changeColorDelegate {
     func updateColor()
 }
 class HomeViewController : UIViewController, ColorSelectorDelegate {
-
-    
     let ContactCard = ContactUserCard()
     let meetingCard = MeetingCard()
     
@@ -33,6 +31,7 @@ class HomeViewController : UIViewController, ColorSelectorDelegate {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "Components"
+        navigationController?.navigationBar.prefersLargeTitles = true
         setupUI()
     }
     
