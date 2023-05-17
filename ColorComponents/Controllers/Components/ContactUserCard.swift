@@ -36,7 +36,6 @@ extension ContactUserCard {
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        containerView.backgroundColor = UIColor(named: "greenPrimary")
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.layer.cornerRadius = 13
         containerView.clipsToBounds = true
@@ -47,7 +46,6 @@ extension ContactUserCard {
         containerView.layer.masksToBounds = false
         
         userImage.image = UIImage(named: "avatarOne")
-        userImage.backgroundColor = UIColor(named: "greenSecondary")
         userImage.layer.cornerRadius = 45
         userImage.contentMode = .scaleAspectFit
         userImage.clipsToBounds = true
@@ -57,7 +55,6 @@ extension ContactUserCard {
         jobStatusLabel.textAlignment = .center
         jobStatusLabel.font = .systemFont(ofSize: 23, weight: .semibold)
         jobStatusLabel.translatesAutoresizingMaskIntoConstraints = false
-        jobStatusLabel.backgroundColor = UIColor(named: "greenSecondary")
         jobStatusLabel.textColor = .black
         jobStatusLabel.layer.cornerRadius = 13
         jobStatusLabel.clipsToBounds = true
@@ -72,11 +69,16 @@ extension ContactUserCard {
         let shareImg = UIImage(systemName: "square.and.arrow.up", withConfiguration: imgConfig)
         
         shareButton.setImage( shareImg, for: .normal)
-        shareButton.backgroundColor = UIColor(named: "greenSecondary")
         shareButton.layer.cornerRadius = 24
         shareButton.clipsToBounds = true
         shareButton.tintColor = .black
         shareButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        containerView.backgroundColor = .gray
+        userImage.backgroundColor = .white
+        jobStatusLabel.backgroundColor = .white
+        shareButton.backgroundColor = .white
+        
     }
     
     
@@ -106,6 +108,13 @@ extension ContactUserCard {
             shareButton.widthAnchor.constraint(equalToConstant: 48),
             shareButton.heightAnchor.constraint(equalToConstant: 48),
         ])
+    }
+    
+    func changeColor(primaryColor: UIColor? = .systemBackground, secondaryColor: UIColor? = .gray, details: UIColor? = .label) {
         
+        containerView.backgroundColor = primaryColor
+        userImage.backgroundColor = secondaryColor
+        jobStatusLabel.backgroundColor = secondaryColor
+        shareButton.backgroundColor = secondaryColor
     }
 }

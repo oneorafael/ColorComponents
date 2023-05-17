@@ -33,7 +33,6 @@ class MeetingCard: UIView {
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        containerView.backgroundColor = UIColor(named: "greenPrimary")
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.layer.cornerRadius = 13
         containerView.clipsToBounds = true
@@ -44,8 +43,7 @@ class MeetingCard: UIView {
         containerView.layer.masksToBounds = false
         
         notificationIcon.image = UIImage(systemName: "video.fill")
-        notificationIcon.backgroundColor = UIColor(named: "greenSecondary")
-        notificationIcon.tintColor = UIColor(named: "greenPrimary")
+        notificationIcon.tintColor = .green
         notificationIcon.layer.cornerRadius = 25
         notificationIcon.contentMode = .scaleAspectFit
         notificationIcon.clipsToBounds = true
@@ -62,12 +60,15 @@ class MeetingCard: UIView {
         descriptionLabel.textAlignment = .center
         
         enterButton.setTitle("Entrar", for: .normal)
-        enterButton.backgroundColor = UIColor(named: "greenSecondary")
-        enterButton.setTitleColor(.black, for: .normal)
+        enterButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         enterButton.layer.cornerRadius = 13
         enterButton.clipsToBounds = true
         enterButton.translatesAutoresizingMaskIntoConstraints = false
         
+        containerView.backgroundColor = .gray
+        notificationIcon.backgroundColor = .white
+        enterButton.backgroundColor = .white
+        enterButton.setTitleColor(.gray, for: .normal)
         
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -93,5 +94,12 @@ class MeetingCard: UIView {
             enterButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -32),
             enterButton.heightAnchor.constraint(equalToConstant: 48)
         ])
+    }
+    
+    func changeColor(primaryColor: UIColor? = .systemBackground, secondaryColor: UIColor? = .gray, details: UIColor? = .black) {
+        containerView.backgroundColor = primaryColor
+        notificationIcon.backgroundColor = secondaryColor
+        enterButton.backgroundColor = secondaryColor
+        enterButton.setTitleColor(details, for: .normal)
     }
 }
