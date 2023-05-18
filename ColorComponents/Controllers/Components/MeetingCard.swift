@@ -65,10 +65,6 @@ class MeetingCard: UIView {
         enterButton.clipsToBounds = true
         enterButton.translatesAutoresizingMaskIntoConstraints = false
         
-        containerView.backgroundColor = .gray
-        notificationIcon.backgroundColor = .white
-        enterButton.backgroundColor = .white
-        enterButton.setTitleColor(.gray, for: .normal)
         
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: self.topAnchor),

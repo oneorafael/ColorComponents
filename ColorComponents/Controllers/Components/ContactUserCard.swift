@@ -73,14 +73,7 @@ extension ContactUserCard {
         shareButton.clipsToBounds = true
         shareButton.tintColor = .black
         shareButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        containerView.backgroundColor = .gray
-        userImage.backgroundColor = .white
-        jobStatusLabel.backgroundColor = .white
-        shareButton.backgroundColor = .white
-        
     }
-    
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
